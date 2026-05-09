@@ -1,7 +1,7 @@
 <template>
-
     <header clas="layout-container">
     <h1>Cadastro de Funcionários</h1>
+    <p>Gerencie os colaboradores da empresa: adicione, edite ou remova registros de forma fácil e rápida.</p>
     </header>
     <main class="content">
 
@@ -134,8 +134,10 @@ export default {
 
 <script setup>
 import { ref, reactive, onMounted } from 'vue'
-import { supabase } from '../composable/useSupabase'
+import { useSupabase } from '../composable/useSupabase'
 
+const { supabase } = useSupabase()
+ 
 // Variáveis que controlam os dados na tela
 const funcionarios = ref([])
 const editandoId = ref(null)
